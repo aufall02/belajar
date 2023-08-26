@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Color Backround</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title" id="title">Change Color Generator</div>
+      <div class="box charcoal">
+        <div class="circle persian-green"></div>
+        <div class="circle saffron"></div>
+        <div class="circle sandy-brown"></div>
+        <div class="circle burnt-sienna"></div>
+      </div>
+      <div class="btn-reset charcoal">Riset</div>
+    </div>
+
+    <script>
+      const circles = document.querySelectorAll(".circle");
+      const btnRiset = document.querySelector(".btn-reset");
+      const title = document.getElementById("title");
+
+      circles.forEach((circle) => {
+        changeBackround(circle);
+      });
+
+      btnRiset.addEventListener("click", () => {
+        location.reload();
+      });
+
+      function changeBackround(item) {
+        item.addEventListener("click", ({ target }) => {
+          //cek apakah circlenny ada class yang warnanya tabrakan dengan backround
+          if (item.className.includes("persian-green")) {
+            title.classList.add("white");
+          } else {
+            title.classList.remove("white");
+          }
+          //ganti backround
+          const { backgroundColor } = getComputedStyle(target);
+          document.body.style.backgroundColor = backgroundColor;
+        });
+      }
+    </script>
+  </body>
+</html>
