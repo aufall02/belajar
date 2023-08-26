@@ -38,6 +38,13 @@ body {
   justify-content: space-evenly;
 }
 
+.box1 {
+  width: 75%;
+  border-radius: 24px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .circle {
   width: 100px;
   height: 100px;
@@ -53,6 +60,13 @@ body {
   color: white;
 }
 
+.link {
+  padding: 12px 24px;
+  margin-top: 24px;
+  cursor: pointer;
+  border-radius: 12px;
+  color: white;
+}
 
 .charcoal {
   background-color: #264653;
